@@ -1,11 +1,5 @@
 # Variables for use throughout the templates and taks.
 
-# Ports
-plex_port: 32400
-sab_port:
-couch_port:
-sonarr_port:
-
 # Plex Docker Creation Variables
 host_plex_config_path: /storage/plexdb
 host_media_tv_path: /media/tvshows
