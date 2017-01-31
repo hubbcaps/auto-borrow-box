@@ -1,5 +1,6 @@
 # Variables for use throughout the templates and taks.
 
+# Ports
 plex_port: 32400
 sab_port:
 couch_port:
@@ -11,3 +12,6 @@ host_media_tv_path: /media/tvshows
 host_media_movies_path: /media/movies
 host_media_anime_path: /media/anime
 plex_transcode_path: /storage/plexdb/config
+TZ_TimeZone: America/Phoenix
+plex_user_id: 0
+plex_group_id: 0
