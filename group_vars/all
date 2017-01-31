@@ -5,5 +5,9 @@ sab_port:
 couch_port:
 sonarr_port:
 
-plex_host: plex
-
+# Plex Docker Creation Variables
+host_plex_config_path: /storage/plexdb
+host_media_tv_path: /media/tvshows
+host_media_movies_path: /media/movies
+host_media_anime_path: /media/anime
+plex_transcode_path: /storage/plexdb/config
