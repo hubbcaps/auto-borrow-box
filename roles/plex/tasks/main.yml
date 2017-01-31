@@ -3,7 +3,8 @@
   docker:
     name: plex
     image: linuxserver/plex
-    state: reloaded
+    state: started
+    restart_policy: always 
     pull: always
     net : host
     volumes:
@@ -13,7 +14,15 @@
     - "{{ host_media_anime_path }}:/data/anime"
     - "{{ plex_transcode_path }}:/transcode"
     ports:
-    - "32400:32400"
+    - '32400:32400'
+    - '32400:32400/udp'
+    - '32469:32469'
+    - '32469:32469/udp'
+    - '5353:5353/udp'
+    - '1900:1900/udp'
+    log_driver: 'syslog'
+    log_opt:
+      syslog-tag: plex
     env:
       TZ: {{ TZ_TimeZone }}
       PUID: {{ plex_user_id }}
