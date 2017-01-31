@@ -9,3 +9,8 @@ plex_transcode_path: /storage/plexdb/config
 TZ_TimeZone: America/Phoenix
 plex_user_id: 0
 plex_group_id: 0
+
+# SabNZB Docker Creation Variables
+sab_directory: /storage/sab
+sab_user_id: 0
+sab_group_id: 0
