@@ -22,10 +22,28 @@
   firewalld: port={{ plex_port }}/tcp permanent=true state=enabled immediate=yes
 
 - name: insert firewalld rule for sab port
-  firewalld: port={{ sab_port }}/tcp permanent=true state=enabled immediate=yes
+  firewalld: port={{ sab_port1 }}/tcp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for sab port
+  firewalld: port={{ sab_port2 }}/tcp permanent=true state=enabled immediate=yes
 
 - name: insert firewalld rule for couch potato port
   firewalld: port={{ couch_port }}/tcp permanent=true state=enabled immediate=yes
 
 - name: insert firewalld rule for sonarr port
   firewalld: port={{ sonarr_port }}/tcp permanent=true state=enabled immediate=yes
+
+- name: Open up plex port
+  firewalld: port={{ plex_port }}/udp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for sab port
+  firewalld: port={{ sab_port1 }}/udp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for sab port
+  firewalld: port={{ sab_port2 }}/udp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for couch potato port
+  firewalld: port={{ couch_port }}/udp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for sonarr port
+  firewalld: port={{ sonarr_port }}/udp permanent=true state=enabled immediate=yes

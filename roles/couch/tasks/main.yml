@@ -1,0 +1,18 @@
+- name: 'Start the couchpotato docker container'
+  docker:
+    image: "linuxserver/couchpotato"
+    name: "couch"
+    env:
+      PUID: '{{ couch_user_id }}'
+      PGID: '{{ couch_group_id }}'
+    volumes:
+      - '/etc/localtime:/etc/localtime:ro'
+      - '{{ couch_directory }}:/config'
+      - '{{ host_media_downloaded }}:/downloads'
+      - '{{ host_media_movies_path }}:/movies'
+    ports: '5050:5050'
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      syslog-tag: "couch"

@@ -1,5 +1,19 @@
 # Variables for use throughout the templates and taks.
 
+# Application Ports
+
+plex_port: 32400
+sab_port1: 8080
+sab_port2: 9090
+couch_port: 5050
+sonarr_port: 8989
+
+# Global Downloading Paths
+
+host_media: /media
+host_media_downloaded: /media/downloads
+host_media_downloading: /media/incomplete-downloads
+
 # Plex Docker Creation Variables
 host_plex_config_path: /storage/plexdb
 host_media_tv_path: /media/tvshows
@@ -14,3 +28,13 @@ plex_group_id: 0
 sab_directory: /storage/sab
 sab_user_id: 0
 sab_group_id: 0
+
+# Couch Docker Creation Variables
+couch_directory: /storage/couch
+couch_user_id: 0
+couch_group_id: 0
+
+# Sonarr Docker Creation Variables
+sonarr_directory: /storage/couch
+sonarr_user_id: 0
+sonarr_group_id: 0

@@ -4,13 +4,14 @@
   docker:
     image: "linuxserver/sabnzbd"
     name: "sab"
+    env:
       PUID: '{{ sab_user_id }}'
       PGID: '{{ sab_group_id }}'
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
-      - '{{ sab_directory }}/config:/config'
-      - '{{ sab_directory }}/downloads:/downloads'
-      - '{{ sab_directory }}/incomplete-downloads:/incomplete-downloads'
+      - '{{ sab_directory }}:/config'
+      - '{{ host_media_downloaded }}:/downloads'
+      - '{{ host_media_downloading }}:/incomplete-downloads'
     ports: '8080:8080'
     state: 'started'
     restart_policy: 'always'
