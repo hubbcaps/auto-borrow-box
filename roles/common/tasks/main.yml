@@ -1,0 +1,31 @@
+# This play book handles the downloading of necessary packages and applies firewall opening on the server.
+
+- name: Install necessary packages
+  yum: name={{item}} state=installed
+  with_items:
+    - git
+    - curl
+    - wget
+
+- name: Install docker
+  shell: curl -fsSL https://get.docker.com/ | sh
+
+- name: Start and Enable the docker service
+    service: name=docker state=started enabled=yes
+ 
+- name: test to see if selinux is running and shut it off.
+    command: getenforce
+    register: sestatus
+    changed_when: false
+
+- name: Open up plex port
+  firewalld: port={{ plex_port }}/tcp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for sab port
+  firewalld: port={{ sab_port }}/tcp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for couch potato port
+  firewalld: port={{ couch_port }}/tcp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for sonarr port
+  firewalld: port={{ sonarr_port }}/tcp permanent=true state=enabled immediate=yes

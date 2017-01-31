@@ -1,0 +1,21 @@
+# This playbook will deploy the whole Plex + Usenet Automation Setup inside docker containers. Remove any roles you don't want.
+
+- name: Apply system configuration 
+  hosts: dockbox
+  remote_user: hubcaps
+  become: true
+
+  roles:
+    - common
+
+- name: Spin up docker containers for each application in the stack
+  hosts: dockbox
+  remote_user: hubcaps
+  become: true
+
+  roles:
+    - plex
+    - sab
+    - couch
+    - sonarr
+
