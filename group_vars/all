@@ -35,6 +35,6 @@ couch_user_id: 0
 couch_group_id: 0
 
 # Sonarr Docker Creation Variables
-sonarr_directory: /storage/couch
+sonarr_directory: /storage/sonarr
 sonarr_user_id: 0
 sonarr_group_id: 0
