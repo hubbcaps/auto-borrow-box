@@ -24,7 +24,7 @@
     log_opt:
       syslog-tag: plex
     env:
-      TZ: {{ TZ_TimeZone }}
-      PUID: {{ plex_user_id }}
-      GUID: {{ plex_group_id }}
+      TZ: "{{ TZ_TimeZone }}"
+      PUID: "{{ plex_user_id }}"
+      GUID: "{{ plex_group_id }}"
       VERSION: latest

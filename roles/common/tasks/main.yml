@@ -11,12 +11,12 @@
   shell: curl -fsSL https://get.docker.com/ | sh
 
 - name: Start and Enable the docker service
-    service: name=docker state=started enabled=yes
+  service: name=docker state=started enabled=yes
  
 - name: test to see if selinux is running and shut it off.
-    command: getenforce
-    register: sestatus
-    changed_when: false
+  command: getenforce
+  register: sestatus
+  changed_when: false
 
 - name: Open up plex port
   firewalld: port={{ plex_port }}/tcp permanent=true state=enabled immediate=yes
