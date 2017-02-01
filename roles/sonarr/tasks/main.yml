@@ -1,5 +1,5 @@
 - name: setup and start the Sonarr container
-  docker:
+  docker_container:
     image: "linuxserver/sonarr"
     name: "sonarr"
     env:

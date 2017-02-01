@@ -1,7 +1,7 @@
 # Install and start SabNZB Docker Image
 
 - name: Build and Start docker Image
-  docker:
+  docker_container:
     image: "linuxserver/sabnzbd"
     name: "sab"
     env:

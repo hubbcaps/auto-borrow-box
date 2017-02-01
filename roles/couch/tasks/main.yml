@@ -1,5 +1,5 @@
 - name: 'Start the couchpotato docker container'
-  docker:
+  docker_container:
     image: "linuxserver/couchpotato"
     name: "couch"
     env:

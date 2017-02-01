@@ -1,6 +1,6 @@
 # Setup Plex Container
 - name: plex container
-  docker:
+  docker_container:
     name: plex
     image: linuxserver/plex
     state: started
