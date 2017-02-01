@@ -15,4 +15,4 @@
     restart_policy: 'always'
     log_driver: 'syslog'
     log_opt:
-      syslog-tag: "couch"
+      tag: "couch"

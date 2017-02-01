@@ -20,7 +20,7 @@
     - '1900:1900/udp'
     log_driver: 'syslog'
     log_opt:
-      syslog-tag: "plex"
+      tag: "plex"
     env:
       TZ: "{{ TZ_TimeZone }}"
       PUID: "{{ plex_user_id }}"
