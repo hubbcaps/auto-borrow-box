@@ -12,7 +12,7 @@
   yum_repository:
     name: docker
     description: Docker Centos Repo
-    baseurl: https://docs.docker.com/engine/installation/linux/repo_files/centos/docker.repo 
+    baseurl: https://yum.dockerproject.org/repo/main/centos/7 
 
 - name: Install docker
   yum: name=docker-engine state=latest update_cache=yes
