@@ -8,6 +8,11 @@
     - wget
     - yum-utils
 
+- name: Add Docker GPG key
+  rpm_key:
+    state: present
+    key: https://yum.dockerproject.org/gpg
+
 - name: Add repository
   yum_repository:
     name: docker
