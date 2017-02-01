@@ -7,20 +7,10 @@
     - curl
     - wget
     - yum-utils
-
-- name: Add Docker GPG key
-  rpm_key:
-    state: present
-    key: https://yum.dockerproject.org/gpg
-
-- name: Add repository
-  yum_repository:
-    name: docker
-    description: Docker Centos Repo
-    baseurl: https://yum.dockerproject.org/repo/main/centos/7 
+    - python-pip
 
 - name: Install docker
-  yum: name=docker-engine state=latest update_cache=yes
+  pip: name=docker
 
 - name: Start and Enable the docker service
   service: name=docker state=started enabled=yes
