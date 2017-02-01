@@ -1,0 +1,18 @@
+- name: setup and start the Sonarr container
+  docker:
+    image: "linuxserver/sonarr"
+    name: "sonarr"
+    env:
+      PUID: '{{ sonarr_user_id }}'
+      PGID: '{{ sonarr_group_id }}'
+    volumes:
+      - '/dev/rtc:/dev/rtc:ro'
+      - '{{ sonarr_directory }}:/config '
+      - '{{ host_media_tv_path }}:/tv'
+      - '{{ host_media_downloaded }}:/downloads'
+    ports: '8989:8989'
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      syslog-tag: "sonarr"
