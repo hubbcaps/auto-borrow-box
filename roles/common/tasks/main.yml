@@ -10,7 +10,10 @@
     - python-pip
 
 - name: Install docker
-  pip: name=docker
+  pip: name={{item}}
+  with_items:
+    - docker
+    - docker-py
 
 - name: Start and Enable the docker service
   service: name=docker state=started enabled=yes
