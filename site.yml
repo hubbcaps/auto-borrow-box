@@ -6,7 +6,7 @@
   become: true
 
   roles:
-    - common
+    - { role: common, tags: [ 'common' ] }
 
 - name: Spin up docker containers for each application in the stack
   hosts: dockbox
@@ -14,8 +14,8 @@
   become: true
 
   roles:
-    - plex
-    - sab
-    - couch
-    - sonarr
+    - { role: plex, tags: [ 'plex' ] }
+    - { role: sab, tags: [ 'sab' ] }
+    - { role: couch, tags: [ 'couch' ] }
+    - { role: sonarr, tags: [ 'sonarr'] }
 
