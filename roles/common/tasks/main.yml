@@ -17,11 +17,17 @@
 
 - name: Start and Enable the docker service
   service: name=docker state=started enabled=yes
- 
+
+# TODO: Don't do this.
+
 - name: test to see if selinux is running and shut it off.
   command: getenforce
   register: sestatus
   changed_when: false
+
+# TODO: Seriously, don't do that.
+
+# Open up ports for all those dope applications.
 
 - name: Open up plex port
   firewalld: port={{ plex_port }}/tcp permanent=true state=enabled immediate=yes
@@ -38,6 +44,9 @@
 - name: insert firewalld rule for sonarr port
   firewalld: port={{ sonarr_port }}/tcp permanent=true state=enabled immediate=yes
 
+- name: insert firewalld rule for hydra port
+  firewalld: port={{ hydra_port }}/tcp permanent=true state=enabled immediate=yes
+
 - name: Open up plex port
   firewalld: port={{ plex_port }}/udp permanent=true state=enabled immediate=yes
 
@@ -52,3 +61,6 @@
 
 - name: insert firewalld rule for sonarr port
   firewalld: port={{ sonarr_port }}/udp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for hydra port
+  firewalld: port={{ hydra_port }}/udp permanent=true state=enabled immediate=yes

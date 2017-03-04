@@ -7,6 +7,7 @@ sab_port1: 8080
 sab_port2: 9090
 couch_port: 5050
 sonarr_port: 8989
+hydra_port: 5075
 
 # Global Downloading Paths
 
@@ -38,3 +39,9 @@ couch_group_id: 0
 sonarr_directory: /storage/sonarr
 sonarr_user_id: 0
 sonarr_group_id: 0
+
+# Hydra Docker Creation Variables
+hydra_directory: /storage/hydra
+hydra_download_directory: /storage/hydra/downloads
+hydra_user_id: 0
+hydra_group_id: 0

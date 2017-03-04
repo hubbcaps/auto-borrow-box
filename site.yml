@@ -18,4 +18,4 @@
     - { role: sab, tags: [ 'sab' ] }
     - { role: couch, tags: [ 'couch' ] }
     - { role: sonarr, tags: [ 'sonarr'] }
-
+    - { role: hydra, tags: [ 'hydra' ] }

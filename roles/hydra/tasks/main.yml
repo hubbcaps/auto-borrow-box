@@ -1,0 +1,17 @@
+- name: setup and start the NZBHydra container
+  docker_container:
+    image: "linuxserver/hydra"
+    name: "hydra"
+    env:
+      PUID: '{{ hydra_user_id }}'
+      PGID: '{{ hydra_group_id }}'
+      TZ: '{{ TZ_TimeZone }}' 
+    volumes:
+      - '{{ hydra_directory }}:/config '
+      - '{{ hydra_downloads_directory }}:/downloads'
+    ports: '5075:5075'
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      tag: "hydra"
