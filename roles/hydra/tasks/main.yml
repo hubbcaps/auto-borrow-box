@@ -5,7 +5,7 @@
     env:
       PUID: '{{ hydra_user_id }}'
       PGID: '{{ hydra_group_id }}'
-      TZ: '{{ TZ_TimeZone }}' 
+      TZ: 'America/Phoenix'
     volumes:
       - '{{ hydra_directory }}:/config '
       - '{{ hydra_downloads_directory }}:/downloads'

@@ -42,6 +42,6 @@ sonarr_group_id: 0
 
 # Hydra Docker Creation Variables
 hydra_directory: /storage/hydra
-hydra_download_directory: /storage/hydra/downloads
+hydra_downloads_directory: /storage/hydra/downloads
 hydra_user_id: 0
 hydra_group_id: 0
