@@ -1,0 +1,16 @@
+- name: setup and start the Sonarr container
+  docker_container:
+    image: "linuxserver/ombi"
+    name: "ombi"
+    env:
+      PUID: '{{ ombi_user_id }}'
+      PGID: '{{ ombi_group_id }}'
+    volumes:
+      - '/etc/localtime:/etc/localtime:ro'
+      - '{{ ombi_directory }}:/config '
+    ports: '3579:3579'
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      tag: "ombi"

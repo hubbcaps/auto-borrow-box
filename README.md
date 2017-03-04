@@ -1,6 +1,6 @@
 # autoplex
 
-This is an Ansible Playbook used to deploy Plex, SabNZB, NZBHydra, Radarr and Sonarr inside of Docker containers.
+This is an Ansible Playbook used to deploy Plex, SabNZB, NZBHydra, Ombi, Radarr, and Sonarr inside of Docker containers.
 
 This playbook fully assumes Centos 7 as your target machine, as well as your ability to sudo up.
 

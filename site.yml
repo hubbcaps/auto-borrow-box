@@ -19,3 +19,4 @@
     - { role: radarr, tags: [ 'radarr' ] }
     - { role: sonarr, tags: [ 'sonarr'] }
     - { role: hydra, tags: [ 'hydra' ] }
+    - { role: ombi, tags: [ 'ombi' ] }

@@ -47,6 +47,9 @@
 - name: insert firewalld rule for hydra port
   firewalld: port={{ hydra_port }}/tcp permanent=true state=enabled immediate=yes
 
+- name: insert firewalld rule for ombi port
+  firewalld: port={{ ombi_port }}/tcp permanent=true state=enabled immediate=yes
+
 - name: Open up plex port
   firewalld: port={{ plex_port }}/udp permanent=true state=enabled immediate=yes
 
@@ -64,3 +67,6 @@
 
 - name: insert firewalld rule for hydra port
   firewalld: port={{ hydra_port }}/udp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for ombi port
+  firewalld: port={{ ombi_port }}/udp permanent=true state=enabled immediate=yes

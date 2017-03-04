@@ -8,6 +8,7 @@ sab_port2: 9090
 radarr_port: 7878
 sonarr_port: 8989
 hydra_port: 5075
+ombi_port: 3579
 
 # Global Downloading Paths
 
@@ -45,3 +46,10 @@ hydra_directory: /storage/hydra
 hydra_downloads_directory: /storage/hydra/downloads
 hydra_user_id: 0
 hydra_group_id: 0
+
+# Ombi Docker Creation Variables
+ombi_directory: /storage/ombi
+ombi_user_id: 0
+ombi_group_id: 0
+
+
