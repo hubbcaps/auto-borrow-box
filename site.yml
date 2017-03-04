@@ -16,6 +16,6 @@
   roles:
     - { role: plex, tags: [ 'plex' ] }
     - { role: sab, tags: [ 'sab' ] }
-    - { role: couch, tags: [ 'couch' ] }
+    - { role: radarr, tags: [ 'radarr' ] }
     - { role: sonarr, tags: [ 'sonarr'] }
     - { role: hydra, tags: [ 'hydra' ] }

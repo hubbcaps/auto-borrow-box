@@ -5,7 +5,7 @@
 plex_port: 32400
 sab_port1: 8080
 sab_port2: 9090
-couch_port: 5050
+radarr_port: 7878
 sonarr_port: 8989
 hydra_port: 5075
 
@@ -31,9 +31,9 @@ sab_user_id: 0
 sab_group_id: 0
 
 # Couch Docker Creation Variables
-couch_directory: /storage/couch
-couch_user_id: 0
-couch_group_id: 0
+radarr_directory: /storage/radarr
+radarr_user_id: 0
+radarr_group_id: 0
 
 # Sonarr Docker Creation Variables
 sonarr_directory: /storage/sonarr
