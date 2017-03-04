@@ -1,4 +1,4 @@
-- name: 'Start the couchpotato docker container'
+- name: 'Start the radarr docker container'
   docker_container:
     image: "linuxserver/radarr"
     name: "radarr"
