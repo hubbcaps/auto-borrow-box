@@ -55,6 +55,6 @@ ombi_group_id: 0
 
 # Organizr Docker Creation variables
 organ_directory: /storage/organizr
-organ_user_id: 0
-organ_group_id: 0
+organ_user_id: 1004
+organ_group_id: 1004
 
