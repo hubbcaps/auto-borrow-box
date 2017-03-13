@@ -9,6 +9,7 @@ radarr_port: 7878
 sonarr_port: 8989
 hydra_port: 5075
 ombi_port: 3579
+organ_port: 8181
 
 # Global Downloading Paths
 
@@ -52,4 +53,8 @@ ombi_directory: /storage/ombi
 ombi_user_id: 0
 ombi_group_id: 0
 
+# Organizr Docker Creation variables
+organ_directory: /storage/organizr
+organ_user_id: 0
+organ_group_id: 0
 

@@ -50,6 +50,9 @@
 - name: insert firewalld rule for ombi port
   firewalld: port={{ ombi_port }}/tcp permanent=true state=enabled immediate=yes
 
+- name: insert firewalld rule for organ port
+  firewalld: port={{ organ_port }}/tcp permanent=true state=enabled immediate=yes
+
 - name: Open up plex port
   firewalld: port={{ plex_port }}/udp permanent=true state=enabled immediate=yes
 
@@ -70,3 +73,6 @@
 
 - name: insert firewalld rule for ombi port
   firewalld: port={{ ombi_port }}/udp permanent=true state=enabled immediate=yes
+
+- name: insert firewalld rule for organ port
+  firewalld: port={{ organ_port }}/udp permanent=true state=enabled immediate=yes
