@@ -3,13 +3,13 @@
     image: "linuxserver/hydra"
     name: "hydra"
     env:
-      PUID: '{{ hydra_user_id }}'
-      PGID: '{{ hydra_group_id }}'
-      TZ: 'America/Phoenix'
+      PUID: '{{ user_id }}'
+      PGID: '{{ group_id }}'
+      TZ: '{{ TZ_TimeZone  }}'
     volumes:
       - '{{ hydra_directory }}:/config '
       - '{{ hydra_downloads_directory }}:/downloads'
-    ports: '5075:5075'
+    ports: "{{ hydra_port }}:{{ hydra_port }}"
     state: 'started'
     restart_policy: 'always'
     log_driver: 'syslog'

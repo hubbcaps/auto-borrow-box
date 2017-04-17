@@ -1,10 +1,13 @@
 # Variables for use throughout the templates and taks.
 
+user_id: 1004
+group_id: 1004
+TZ_TimeZone: America/Phoenix
+
 # Application Ports
 
 plex_port: 32400
-sab_port1: 8080
-sab_port2: 9090
+sab_port: 8080
 radarr_port: 7878
 sonarr_port: 8989
 hydra_port: 5075
@@ -23,38 +26,22 @@ host_media_tv_path: /media/tvshows
 host_media_movies_path: /media/movies
 host_media_anime_path: /media/anime
 plex_transcode_path: /storage/plexdb/config
-TZ_TimeZone: America/Phoenix
-plex_user_id: 0
-plex_group_id: 0
 
 # SabNZB Docker Creation Variables
 sab_directory: /storage/sab
-sab_user_id: 0
-sab_group_id: 0
 
 # Couch Docker Creation Variables
 radarr_directory: /storage/radarr
-radarr_user_id: 0
-radarr_group_id: 0
 
 # Sonarr Docker Creation Variables
 sonarr_directory: /storage/sonarr
-sonarr_user_id: 0
-sonarr_group_id: 0
 
 # Hydra Docker Creation Variables
 hydra_directory: /storage/hydra
 hydra_downloads_directory: /storage/hydra/downloads
-hydra_user_id: 0
-hydra_group_id: 0
 
 # Ombi Docker Creation Variables
 ombi_directory: /storage/ombi
-ombi_user_id: 0
-ombi_group_id: 0
 
 # Organizr Docker Creation variables
 organ_directory: /storage/organizr
-organ_user_id: 1004
-organ_group_id: 1004
-

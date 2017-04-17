@@ -3,11 +3,11 @@
     image: "lsiocommunity/organizr"
     name: "organizr"
     env:
-      PUID: '{{ organ_user_id }}'
-      PGID: '{{ organ_group_id }}'
+      PUID: '{{ user_id }}'
+      PGID: '{{ group_id }}'
     volumes:
       - '{{ organ_directory }}:/config'
-    ports: '8181:80'
+    ports: '{{ organ_port }}:80'
     state: 'started'
     restart_policy: 'always'
     log_driver: 'syslog'

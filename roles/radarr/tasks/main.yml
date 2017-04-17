@@ -10,7 +10,7 @@
       - '{{ radarr_directory }}:/config'
       - '{{ host_media_downloaded }}:/downloads'
       - '{{ host_media_movies_path }}:/movies'
-    ports: '7878:7878'
+    ports: '{{ radarr_port }}:{{ radarr_port  }}'
     state: 'started'
     restart_policy: 'always'
     log_driver: 'syslog'

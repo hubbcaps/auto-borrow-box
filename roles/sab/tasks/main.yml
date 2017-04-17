@@ -5,14 +5,14 @@
     image: "linuxserver/sabnzbd"
     name: "sab"
     env:
-      PUID: '{{ sab_user_id }}'
-      PGID: '{{ sab_group_id }}'
+      PUID: '{{ user_id }}'
+      PGID: '{{ group_id }}'
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
       - '{{ sab_directory }}:/config'
       - '{{ host_media }}:/downloads'
       - '{{ host_media_downloading }}:/incomplete-downloads'
-    ports: '8080:8080'
+    ports: '{{ sab_port }}:{{ sab_port }}'
     state: 'started'
     restart_policy: 'always'
     log_driver: 'syslog'

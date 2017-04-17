@@ -3,12 +3,12 @@
     image: "linuxserver/ombi"
     name: "ombi"
     env:
-      PUID: '{{ ombi_user_id }}'
-      PGID: '{{ ombi_group_id }}'
+      PUID: '{{ user_id }}'
+      PGID: '{{ group_id }}'
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
       - '{{ ombi_directory }}:/config '
-    ports: '3579:3579'
+    ports: "{{ ombi_port }}:{{ ombi_port }}"
     state: 'started'
     restart_policy: 'always'
     log_driver: 'syslog'
