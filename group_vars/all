@@ -21,11 +21,14 @@ host_media_downloaded: /media/downloads
 host_media_downloading: /media/incomplete-downloads
 
 # Plex Docker Creation Variables
-host_plex_config_path: /storage/plexdb
+host_plex_config_path: /media/plexdb
 host_media_tv_path: /media/tvshows
 host_media_movies_path: /media/movies
 host_media_anime_path: /media/anime
-plex_transcode_path: /storage/plexdb/config
+plex_transcode_path: /media/plexdb/transcode
+plex_claim: <get yours>
+advertise_ip: http://192.168.0.44:32400
+allowed_networks: 192.168.0.0/24
 
 # SabNZB Docker Creation Variables
 sab_directory: /storage/sab

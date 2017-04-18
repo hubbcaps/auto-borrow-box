@@ -5,6 +5,7 @@
     env:
       PUID: '{{ user_id }}'
       PGID: '{{ group_id }}'
+      TZ: '{{ TZ_TimeZone }}'
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
       - '{{ radarr_directory }}:/config'

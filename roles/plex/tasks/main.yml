@@ -2,7 +2,7 @@
 - name: plex container
   docker_container:
     name: "plex"
-    image: "linuxserver/plex"
+    image: "plexinc/pms-docker"
     state: "started"
     restart_policy: "always" 
     volumes:
@@ -13,15 +13,20 @@
     - "{{ plex_transcode_path }}:/transcode"
     ports:
     - '32400:32400'
-    - '33400:33400'
+    - '3005:3005'
+    - '8324:8324'
     - '32469:32469'
-    - '5353:5353'
-    - '1900:1900'
+    - '1900:1900' 
+    - '32410:32410' 
+    - '32412:32412' 
+    - '32413:32413' 
+    - '32414:32414' 
     log_driver: 'syslog'
     log_opt:
       tag: "plex"
     env:
       TZ: "{{ TZ_TimeZone }}"
-      PUID: "{{ plex_user_id }}"
-      GUID: "{{ plex_group_id }}"
-      VERSION: "latest"
+      PLEX_CLAIM: '{{ plex_claim }}' 
+      ADVERTISE_IP: '{{ advertise_ip }}'
+      ALLOWED_NETWORKS: '{{ allowed_networks }}'
+      HOSTNAME: '{{ plex_hostname }}'
