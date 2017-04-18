@@ -3,8 +3,8 @@
     image: "linuxserver/radarr"
     name: "radarr"
     env:
-      PUID: '{{ radarr_user_id }}'
-      PGID: '{{ radarr_group_id }}'
+      PUID: '{{ user_id }}'
+      PGID: '{{ group_id }}'
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
       - '{{ radarr_directory }}:/config'

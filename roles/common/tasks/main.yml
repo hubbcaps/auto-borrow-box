@@ -9,7 +9,18 @@
     - yum-utils
     - python-pip
 
-- name: Install docker
+- name: Add Docker Repo
+  yum_repository:
+    name: docker
+    description: Docker Repo
+    baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+
+- name: Install Docker Main
+  yum:
+    name: docker
+    state: latest
+
+- name: Install docker-py
   pip: name={{item}}
   with_items:
     - docker

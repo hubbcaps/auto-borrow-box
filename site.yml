@@ -12,9 +12,10 @@
   hosts: dockbox
   remote_user: hubcaps
   become: true
+  become_user: docker-runner
 
   roles:
-    #    - { role: plex, tags: [ 'plex' ] }
+    - { role: plex, tags: [ 'plex' ] }
     - { role: sab, tags: [ 'sab' ] }
     - { role: radarr, tags: [ 'radarr' ] }
     - { role: sonarr, tags: [ 'sonarr'] }
