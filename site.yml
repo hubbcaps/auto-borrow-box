@@ -14,7 +14,7 @@
   become: true
 
   roles:
-    - { role: plex, tags: [ 'plex' ] }
+    #    - { role: plex, tags: [ 'plex' ] }
     - { role: sab, tags: [ 'sab' ] }
     - { role: radarr, tags: [ 'radarr' ] }
     - { role: sonarr, tags: [ 'sonarr'] }

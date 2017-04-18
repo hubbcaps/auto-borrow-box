@@ -39,13 +39,13 @@
     state: enabled 
     immediate: yes
   with_items:
-    -{{ plex_port }}
-    -{{ sab_port }}
-    -{{ radarr_port }}
-    -{{ sonarr_port }}
-    -{{ hydra_port }}
-    -{{ ombi_port }}
-    -{{ organ_port }}
+    - "{{ plex_port }}"
+    - "{{ sab_port }}"
+    - "{{ radarr_port }}"
+    - "{{ sonarr_port }}"
+    - "{{ hydra_port }}"
+    - "{{ ombi_port }}"
+    - "{{ organ_port }}"
 
 - name: Open up the TCP ports
   firewalld:
@@ -54,11 +54,11 @@
     state: enabled 
     immediate: yes
   with_items:
-    -{{ plex_port }}
-    -{{ sab_port }}
-    -{{ radarr_port }}
-    -{{ sonarr_port }}
-    -{{ hydra_port }}
-    -{{ ombi_port }}
-    -{{ organ_port }}
+    - "{{ plex_port }}"
+    - "{{ sab_port }}"
+    - "{{ radarr_port }}"
+    - "{{ sonarr_port }}"
+    - "{{ hydra_port }}"
+    - "{{ ombi_port }}"
+    - "{{ organ_port }}"
 
