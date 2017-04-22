@@ -2,7 +2,7 @@
 - name: LazyL container
   docker_container:
     name: "lazyl"
-    image: "linuxserver/lazylibrarian"
+    image: "linuxserver/lazylibrarian:latest"
     state: "started"
     restart_policy: "always" 
     volumes:

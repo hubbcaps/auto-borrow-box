@@ -2,7 +2,7 @@
 - name: Mylar Container
   docker_container:
     name: "mylar"
-    image: "linuxserver/mylar"
+    image: "linuxserver/mylar:latest"
     state: "started"
     restart_policy: "always" 
     volumes:

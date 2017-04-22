@@ -2,7 +2,7 @@
 - name: ubooq container
   docker_container:
     name: "ubooq"
-    image: "linuxserver/ubooquity"
+    image: "linuxserver/ubooquity:latest"
     state: "started"
     restart_policy: "always" 
     volumes:

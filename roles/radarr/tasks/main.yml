@@ -1,6 +1,6 @@
 - name: 'Start the radarr docker container'
   docker_container:
-    image: "linuxserver/radarr"
+    image: "linuxserver/radarr:latest"
     name: "radarr"
     env:
       PUID: '{{ user_id }}'

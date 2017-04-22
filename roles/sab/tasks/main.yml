@@ -2,7 +2,7 @@
 
 - name: Build and Start docker Image
   docker_container:
-    image: "linuxserver/sabnzbd"
+    image: "linuxserver/sabnzbd:latest"
     name: "sab"
     env:
       PUID: '{{ user_id }}'

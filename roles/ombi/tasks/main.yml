@@ -1,6 +1,6 @@
 - name: setup and start the Ombi container
   docker_container:
-    image: "linuxserver/ombi"
+    image: "linuxserver/ombi:latest"
     name: "ombi"
     env:
       PUID: '{{ user_id }}'

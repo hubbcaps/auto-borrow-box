@@ -1,6 +1,6 @@
 - name: setup and start the NZBHydra container
   docker_container:
-    image: "linuxserver/hydra"
+    image: "linuxserver/hydra:latest"
     name: "hydra"
     env:
       PUID: '{{ user_id }}'

@@ -1,6 +1,6 @@
 - name: setup and start the Sonarr container
   docker_container:
-    image: "linuxserver/sonarr"
+    image: "linuxserver/sonarr:latest"
     name: "sonarr"
     env:
       PUID: '{{ user_id }}'

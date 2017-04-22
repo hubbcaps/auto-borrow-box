@@ -1,6 +1,6 @@
 - name: 'Start the Organizr docker container'
   docker_container:
-    image: "lsiocommunity/organizr"
+    image: "lsiocommunity/organizr:latest"
     name: "organizr"
     env:
       PUID: '{{ user_id }}'

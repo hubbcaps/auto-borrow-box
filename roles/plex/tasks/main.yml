@@ -2,7 +2,7 @@
 - name: plex container
   docker_container:
     name: "plex"
-    image: "plexinc/pms-docker"
+    image: "plexinc/pms-docker:latest"
     state: "started"
     restart_policy: "always" 
     volumes:
