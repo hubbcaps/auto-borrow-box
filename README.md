@@ -7,6 +7,7 @@ Before deploying this, you should look through each of the above docker READMEs 
 This playbook fully assumes Centos 7 as your target machine, as well as your ability to sudo up to open up the required ports in firewalld.
 
 Things you should be aware of before configuring the playbooks to work with your setup:
+
 In groupvars/all, you will find the base paths most of the playbooks will assume you have setup. You should change these to match how you want them deployed on your host system or make the folders on your docker host to match the playbooks.
 
 For example on my system I have mounted 2 ISCSI LUNs(fancier NFS) to two seperate paths, /storage and /media
@@ -17,4 +18,12 @@ For example on my system I have mounted 2 ISCSI LUNs(fancier NFS) to two seperat
 
 Make sure to carefully look over how each of the roles use the base paths and conjoin them with their mounted volumes so you know what you want to select when actually setting up the applications after deployment.
 
+You should also create a user on your server purely for running these docker containers, for example docker-runner, and then replace the UID GID variables with it's IDs on the system. Make sure the directories from above are owned by the same user so there isn't any permission issues with your volumes inside the containers.
+
 Once the base container configuration is completed, I highly recommend following [this guide](https://www.cuttingcords.com/home/ultimate-server/newsgroups-and-sabnzbd) to setup some of the applications themselves. Their guide is windows specific, however the application setup portion is the same and it's quite helpful if it's your first time configuring these types of applications. After their inital walk through you should have enough baseline knowledge to continue setting up the rest of the applications.
+
+Troubleshooting tips:
+
+With the configuration of each container, it's pushing all of it's logs into the hosts /var/log/messages so that should be the first place to check when something appears to not be working correctly.
+
+SELinux set to Permissive is the recommended setup, otherwise you may have issues with how some of the containers operate.
