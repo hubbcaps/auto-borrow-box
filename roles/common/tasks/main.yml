@@ -32,44 +32,32 @@
     state: started 
     enabled: yes
 
-# TODO: Don't do this.
-
-- name: test to see if selinux is running and shut it off.
-  command: getenforce
-  register: sestatus
-  changed_when: false
-
-# TODO: Seriously, don't do that.
-
 # Open up ports for all those dope applications.
 
-- name: Open up the TCP ports
+- name: Open up the ports
   firewalld: 
-    port: "{{ item }}/tcp" 
+    port: "{{ item.portname }}/{{item.porttype}}"
     permanent: true 
     state: enabled 
     immediate: yes
   with_items:
-    - "{{ plex_port }}"
-    - "{{ sab_port }}"
-    - "{{ radarr_port }}"
-    - "{{ sonarr_port }}"
-    - "{{ hydra_port }}"
-    - "{{ ombi_port }}"
-    - "{{ organ_port }}"
-
-- name: Open up the TCP ports
-  firewalld:
-    port: "{{ item }}/udp" 
-    permanent: true 
-    state: enabled 
-    immediate: yes
-  with_items:
-    - "{{ plex_port }}"
-    - "{{ sab_port }}"
-    - "{{ radarr_port }}"
-    - "{{ sonarr_port }}"
-    - "{{ hydra_port }}"
-    - "{{ ombi_port }}"
-    - "{{ organ_port }}"
-
+    - { portname: "{{ plex_port }}", porttype: 'tcp'}
+    - { portname: "{{ plex_port }}", porttype: 'udp'}
+    - { portname: "{{ sab_port }}", porttype: 'tcp'}
+    - { portname: "{{ sab_port }}", porttype: 'udp'}
+    - { portname: "{{ radarr_port }}", porttype: 'tcp'}
+    - { portname: "{{ radarr_port }}", porttype: 'udp'}
+    - { portname: "{{ sonarr_port }}", porttype: 'tcp'}
+    - { portname: "{{ sonarr_port }}", porttype: 'udp'}
+    - { portname: "{{ hydra_port }}", porttype: 'tcp'}
+    - { portname: "{{ hydra_port }}", porttype: 'udp'}
+    - { portname: "{{ ombi_port }}", porttype: 'tcp'}
+    - { portname: "{{ ombi_port }}", porttype: 'udp'}
+    - { portname: "{{ organ_port }}", porttype: 'tcp'}
+    - { portname: "{{ organ_port }}", porttype: 'udp'}
+    - { portname: "{{ mylar_port }}", porttype: 'tcp'}
+    - { portname: "{{ mylar_port }}", porttype: 'udp'}
+    - { portname: "{{ lazyl_port }}", porttype: 'tcp'}
+    - { portname: "{{ lazyl_port }}", porttype: 'udp'}
+    - { portname: "{{ ubooq_port }}", porttype: 'tcp'}
+    - { portname: "{{ ubooq_port }}", porttype: 'udp'}

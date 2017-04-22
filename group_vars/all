@@ -13,6 +13,10 @@ sonarr_port: 8989
 hydra_port: 5075
 ombi_port: 3579
 organ_port: 8181
+mylar_port: 8090
+lazyl_port: 5299
+ubooq_port: 2202
+sab_port: 8080
 
 # Global Downloading Paths
 
@@ -48,3 +52,16 @@ ombi_directory: /storage/ombi
 
 # Organizr Docker Creation variables
 organ_directory: /storage/organizr
+
+# Mylar Vars
+
+mylar_config: /storage/mylar
+
+# LazyL Vars
+
+lazyl_config: /storage/lazyl
+
+# Ubooquity Vars
+
+ubooq_config: /storage/ubooq
+max_mem: 8192

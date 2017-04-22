@@ -1,0 +1,21 @@
+# Setup LazyL
+- name: LazyL container
+  docker_container:
+    name: "lazyl"
+    image: "linuxserver/lazylibrarian"
+    state: "started"
+    restart_policy: "always" 
+    volumes:
+    - "{{ lazyl_config }}:/config"
+    - "{{host_media_downloaded}}/books:/downloads"
+    - "{{host_media}}/books:/books"
+    ports:
+      - "{{ lazyl_port }}:{{ lazyl_port }}" 
+    env:
+      TZ: "{{ TZ_TimeZone }}"
+      PUID: "{{ user_id }}"
+      PGID: "{{ group_id }}"
+    log_driver: 'syslog'
+    log_opt:
+      tag: "lazyl"
+

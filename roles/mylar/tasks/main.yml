@@ -1,0 +1,21 @@
+# Setup Mylar
+- name: Mylar Container
+  docker_container:
+    name: "mylar"
+    image: "linuxserver/mylar"
+    state: "started"
+    restart_policy: "always" 
+    volumes:
+    - "{{ mylar_config }}:/config"
+    - "{{host_media_downloaded}}/comics:/downloads"
+    - "{{host_media}}/comics:/comics"
+    ports:
+      - "{{ mylar_port }}:{{ mylar_port }}" 
+    env:
+      TZ: "{{ TZ_TimeZone }}"
+      PUID: "{{ user_id }}"
+      PGID: "{{ group_id }}"
+    log_driver: 'syslog'
+    log_opt:
+      tag: "mylar"
+
