@@ -4,13 +4,13 @@
     name: "mylar"
     image: "linuxserver/mylar:latest"
     state: "started"
-    restart_policy: "always" 
+    restart_policy: "always"
     volumes:
     - "{{ mylar_config }}:/config"
     - "{{host_media_downloaded}}/comics:/downloads"
     - "{{host_media}}/comics:/comics"
     ports:
-      - "{{ mylar_port }}:{{ mylar_port }}" 
+      - "{{ mylar_port }}:{{ mylar_port }}"
     env:
       TZ: "{{ TZ_TimeZone }}"
       PUID: "{{ user_id }}"

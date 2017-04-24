@@ -4,7 +4,7 @@
     name: "plex"
     image: "plexinc/pms-docker:latest"
     state: "started"
-    restart_policy: "always" 
+    restart_policy: "always"
     volumes:
     - "{{ host_plex_config_path }}:/config"
     - "{{ host_media_tv_path }}:/data/tvshows"
@@ -16,17 +16,17 @@
     - '3005:3005'
     - '8324:8324'
     - '32469:32469'
-    - '1900:1900' 
-    - '32410:32410' 
-    - '32412:32412' 
-    - '32413:32413' 
-    - '32414:32414' 
+    - '1900:1900'
+    - '32410:32410'
+    - '32412:32412'
+    - '32413:32413'
+    - '32414:32414'
     log_driver: 'syslog'
     log_opt:
       tag: "plex"
     env:
       TZ: "{{ TZ_TimeZone }}"
-      PLEX_CLAIM: '{{ plex_claim }}' 
+      PLEX_CLAIM: '{{ plex_claim }}'
       ADVERTISE_IP: '{{ advertise_ip }}'
       ALLOWED_NETWORKS: '{{ allowed_networks }}'
       HOSTNAME: '{{ plex_hostname }}'

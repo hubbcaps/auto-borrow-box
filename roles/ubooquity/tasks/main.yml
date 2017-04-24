@@ -4,19 +4,19 @@
     name: "ubooq"
     image: "linuxserver/ubooquity:latest"
     state: "started"
-    restart_policy: "always" 
+    restart_policy: "always"
     volumes:
     - "{{ ubooq_config }}:/config"
     - "{{ host_media }}/books:/books"
     - "{{ host_media }}/comics:/comics"
     - "{{ host_media }}/files:/files"
     ports:
-    - "{{ ubooq_port }}:{{ ubooq_port }}" 
+    - "{{ ubooq_port }}:{{ ubooq_port }}"
     env:
       TZ: "{{ TZ_TimeZone }}"
       PUID: "{{ user_id }}"
       PGID: "{{ group_id }}"
-      MAXMEM: '{{ max_mem }}' 
+      MAXMEM: '{{ max_mem }}'
     log_driver: 'syslog'
     log_opt:
       tag: "ubooq"
