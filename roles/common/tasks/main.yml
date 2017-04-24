@@ -19,6 +19,8 @@
   yum:
     name: docker
     state: latest
+  tags:
+  - skip_ansible_lint
 
 - name: Install docker-py
   pip: name={{item}}
