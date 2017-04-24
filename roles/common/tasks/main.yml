@@ -19,6 +19,8 @@
   yum:
     name: docker
     state: latest
+  tags:
+  - skip_ansible_lint
 
 - name: Install docker-py
   pip: name={{item}}
@@ -27,18 +29,18 @@
     - docker-py
 
 - name: Start and Enable the docker service
-  service: 
-    name: docker 
-    state: started 
+  service:
+    name: docker
+    state: started
     enabled: yes
 
 # Open up ports for all those dope applications.
 
 - name: Open up the ports
-  firewalld: 
+  firewalld:
     port: "{{ item.portname }}/{{item.porttype}}"
-    permanent: true 
-    state: enabled 
+    permanent: true
+    state: enabled
     immediate: yes
   with_items:
     - { portname: "{{ plex_port }}", porttype: 'tcp'}
