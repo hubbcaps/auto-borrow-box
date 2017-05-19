@@ -1,0 +1,20 @@
+# Setup Deluge
+- name: Deluge Container
+  docker_container:
+    name: "deluge"
+    image: "linuxserver/deluge:latest"
+    state: "started"
+    restart_policy: "always"
+    network_mode: "host"
+    volumes:
+    - "{{ deluge_config }}:/config"
+    - "{{host_media_downloaded}}/comics:/downloads"
+    ports:
+      - "{{ deluge_port }}:{{ deluge_port }}"
+    env:
+      TZ: "{{ TZ_TimeZone }}"
+      PUID: "{{ user_id }}"
+      PGID: "{{ group_id }}"
+    log_driver: 'syslog'
+    log_opt:
+      tag: "deluge"

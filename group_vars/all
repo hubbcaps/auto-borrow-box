@@ -16,7 +16,8 @@ organ_port: 8181
 mylar_port: 8090
 lazyl_port: 5299
 ubooq_port: 2202
-sab_port: 8080
+deluge_port: 8112
+torrent_port: 42001
 
 # Global Downloading Paths
 
@@ -65,3 +66,7 @@ lazyl_config: /storage/lazyl
 
 ubooq_config: /storage/ubooq
 max_mem: 8192
+
+# Deluge Vars
+
+deluge_config: /storage/deluge
