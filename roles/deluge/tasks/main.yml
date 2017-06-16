@@ -8,7 +8,7 @@
     network_mode: "host"
     volumes:
     - "{{ deluge_config }}:/config"
-    - "{{host_media_downloaded}}/comics:/downloads"
+    - "{{host_media_downloaded}}/torrents:/downloads"
     ports:
       - "{{ deluge_port }}:{{ deluge_port }}"
     env:
