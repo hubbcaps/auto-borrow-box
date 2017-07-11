@@ -1,20 +1,22 @@
-# Setup Deluge
-- name: Deluge Container
+# Setup Ubooquity
+- name: ubooq container
   docker_container:
-    name: "deluge"
-    image: "linuxserver/deluge:latest"
+    name: "ubooq"
+    image: "linuxserver/ubooquity:latest"
     state: "started"
     restart_policy: "always"
-    network_mode: "host"
     volumes:
-    - "{{ deluge_config }}:/config"
-    - "{{host_media_downloaded}}/comics:/downloads"
+    - "{{ ubooq_config }}:/config"
+    - "{{ host_media }}/books:/books"
+    - "{{ host_media }}/comics:/comics"
+    - "{{ host_media }}/files:/files"
     ports:
-      - "{{ deluge_port }}:{{ deluge_port }}"
+    - "{{ ubooq_port }}:{{ ubooq_port }}"
     env:
       TZ: "{{ TZ_TimeZone }}"
       PUID: "{{ user_id }}"
       PGID: "{{ group_id }}"
+      MAXMEM: '{{ max_mem }}'
     log_driver: 'syslog'
     log_opt:
-      tag: "deluge"
+      tag: "ubooq"

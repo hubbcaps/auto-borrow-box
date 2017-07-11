@@ -1,0 +1,20 @@
+# Setup Calibre
+- name: Calibre container
+  docker_container:
+    name: "calibre"
+    image: "janeczku/calibre-web:latest"
+    state: "started"
+    restart_policy: "always"
+    volumes:
+    - "{{ calibre_config }}:/config"
+    - "{{ host_media }}/books:/books"
+    - "{{ host_media }}/calibre:/calibre"
+    ports:
+    - "{{ calibre_port }}:80"
+    env:
+      PUID: "{{ user_id }}"
+      PGID: "{{ group_id }}"
+      CALIBRE_DBPATH: "{{ calibre_config }}"
+    log_driver: 'syslog'
+    log_opt:
+      tag: "calibre"

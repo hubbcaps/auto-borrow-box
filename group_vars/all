@@ -16,6 +16,7 @@ organ_port: 8181
 mylar_port: 8090
 lazyl_port: 5299
 ubooq_port: 2202
+calibre_port: 2200
 deluge_port: 8112
 torrent_port: 42001
 
@@ -70,3 +71,7 @@ max_mem: 8192
 # Deluge Vars
 
 deluge_config: /storage/deluge
+
+# Calibre Vars
+
+calibre_config: /storage/calibre
