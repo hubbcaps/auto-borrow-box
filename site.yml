@@ -21,7 +21,7 @@
     - { role: sonarr, tags: [ 'sonarr'] }
     - { role: hydra, tags: [ 'hydra' ] }
     - { role: ombi, tags: [ 'ombi' ] }
-    - { role: organizr, tags: [ 'oragnizr' ] }
+    - { role: organizr, tags: [ 'organizr' ] }
     - { role: mylar, tags: [ 'mylar' ] }
     - { role: lazyl, tags: [ 'lazyl' ] }
     - { role: ubooquity, tags: [ 'ubooquity' ] }
