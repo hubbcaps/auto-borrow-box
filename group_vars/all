@@ -71,3 +71,7 @@ max_mem: 8192
 # Deluge Vars
 
 deluge_config: /storage/deluge
+
+# Calibre Vars
+
+calibre_config: /storage/calibre

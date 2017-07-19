@@ -25,4 +25,5 @@
     - { role: mylar, tags: [ 'mylar' ] }
     - { role: lazyl, tags: [ 'lazyl' ] }
     - { role: ubooquity, tags: [ 'ubooquity' ] }
+    - { role: calibre, tags: [ 'calibre' ] }
     - { role: deluge, tags: [ 'deluge' ] }
