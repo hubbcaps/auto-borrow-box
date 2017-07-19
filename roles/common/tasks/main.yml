@@ -61,8 +61,10 @@
     - { portname: "{{ mylar_port }}", porttype: 'udp'}
     - { portname: "{{ lazyl_port }}", porttype: 'tcp'}
     - { portname: "{{ lazyl_port }}", porttype: 'udp'}
-    - { portname: "{{ ubooq_port }}", porttype: 'tcp'}
-    - { portname: "{{ ubooq_port }}", porttype: 'udp'}
+    - { portname: "{{ ubooq_user_port }}", porttype: 'tcp'}
+    - { portname: "{{ ubooq_user_port }}", porttype: 'udp'}
+    - { portname: "{{ ubooq_admin_port }}", porttype: 'tcp'}
+    - { portname: "{{ ubooq_admin_port }}", porttype: 'udp'}
     - { portname: "{{ deluge_port }}", porttype: 'tcp'}
     - { portname: "{{ deluge_port }}", porttype: 'udp'}
     - { portname: "{{ torrent_port }}", porttype: 'tcp'}

@@ -11,7 +11,8 @@
     - "{{ host_media }}/comics:/comics"
     - "{{ host_media }}/files:/files"
     ports:
-    - "{{ ubooq_port }}:{{ ubooq_port }}"
+    - "{{ ubooq_user_port }}:{{ ubooq_user_port }}"
+    - "{{ ubooq_admin_port }}:{{ ubooq_admin_port }}"
     env:
       TZ: "{{ TZ_TimeZone }}"
       PUID: "{{ user_id }}"

@@ -15,7 +15,8 @@ ombi_port: 3579
 organ_port: 8181
 mylar_port: 8090
 lazyl_port: 5299
-ubooq_port: 2202
+ubooq_user_port: 2202
+ubooq_admin_port: 2203
 deluge_port: 8112
 torrent_port: 42001
 
