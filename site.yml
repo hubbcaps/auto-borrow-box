@@ -8,6 +8,7 @@
     - name: run_common
       prompt: "Run System Tasks(Y/N)?"
       default: "N"
+      private: no
 
   roles:
     - { role: common, when: run_common == "Y" or run_common == "y", tags: [ 'common' ] }
@@ -21,33 +22,43 @@
     - name: run_plex
       prompt: "Install Plex(Y/N)?"
       default: "N"
+      private: no
     - name: run_sab
       prompt: "Install Sab(Y/N)?"
       default: "N"
+      private: no
     - name: run_radarr
       prompt: "Install Radarr(Y/N)?"
       default: "N"
+      private: no
     - name: run_sonarr
       prompt: "Install Sonarr(Y/N)?"
       default: "N"
+      private: no
     - name: run_hydra
       prompt: "Install Hydra(Y/N)?"
       default: "N"
+      private: no
     - name: run_ombi
       prompt: "Install Ombi(Y/N)?"
       default: "N"
+      private: no
     - name: run_organizr
       prompt: "Install Organizr(Y/N)?"
       default: "N"
+      private: no
     - name: run_mylar
       prompt: "Install Mylar(Y/N)?"
       default: "N"
+      private: no
     - name: run_lazyl
       prompt: "Install Lazy Librarian(Y/N)?"
       default: "N"
+      private: no
     - name: run_gazee
       prompt: "Install Gazee(Y/N)?"
       default: "N"
+      private: no
 
   roles:
     - { role: plex, when: run_plex == "Y" or run_plex == "y", tags: [ 'plex' ] }
