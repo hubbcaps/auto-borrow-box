@@ -5,6 +5,8 @@
     env:
       PUID: '{{ user_id }}'
       PGID: '{{ group_id }}'
+      VIRTUAL_HOST: gazee.hubcaps.pw
+      VIRTUAL_PORT: '{{ gazee_port }}'
     volumes:
       - '{{ gazee_config }}:/config '
       - '{{ gazee_comics }}:/comics'

@@ -4,24 +4,59 @@
   hosts: dockbox
   remote_user: hubcaps
   become: true
+  vars_prompt:
+    - name: run_common
+      prompt: "Run System Tasks(Y/N)?"
+      default: "N"
 
   roles:
-    - { role: common, tags: [ 'common' ] }
+    - { role: common, when: run_common == "Y" or run_common == "y", tags: [ 'common' ] }
 
 - name: Spin up docker containers for each application in the stack
   hosts: dockbox
   remote_user: hubcaps
   become: true
   become_user: docker-runner
+  vars_prompt:
+    - name: run_plex
+      prompt: "Install Plex(Y/N)?"
+      default: "N"
+    - name: run_sab
+      prompt: "Install Sab(Y/N)?"
+      default: "N"
+    - name: run_radarr
+      prompt: "Install Radarr(Y/N)?"
+      default: "N"
+    - name: run_sonarr
+      prompt: "Install Sonarr(Y/N)?"
+      default: "N"
+    - name: run_hydra
+      prompt: "Install Hydra(Y/N)?"
+      default: "N"
+    - name: run_ombi
+      prompt: "Install Ombi(Y/N)?"
+      default: "N"
+    - name: run_organizr
+      prompt: "Install Organizr(Y/N)?"
+      default: "N"
+    - name: run_mylar
+      prompt: "Install Mylar(Y/N)?"
+      default: "N"
+    - name: run_lazyl
+      prompt: "Install Lazy Librarian(Y/N)?"
+      default: "N"
+    - name: run_gazee
+      prompt: "Install Gazee(Y/N)?"
+      default: "N"
 
   roles:
-    - { role: plex, tags: [ 'plex' ] }
-    - { role: sab, tags: [ 'sab' ] }
-    - { role: radarr, tags: [ 'radarr' ] }
-    - { role: sonarr, tags: [ 'sonarr'] }
-    - { role: hydra, tags: [ 'hydra' ] }
-    - { role: ombi, tags: [ 'ombi' ] }
-    - { role: organizr, tags: [ 'organizr' ] }
-    - { role: mylar, tags: [ 'mylar' ] }
-    - { role: lazyl, tags: [ 'lazyl' ] }
-    - { role: gazee, tags: [ 'gazee' ] }
+    - { role: plex, when: run_plex == "Y" or run_plex == "y", tags: [ 'plex' ] }
+    - { role: sab, when: run_sab == "Y" or run_sab == "y", tags: [ 'sab' ] }
+    - { role: radarr, when: run_radarr == "Y" or run_radarr == "y", tags: [ 'radarr' ] }
+    - { role: sonarr, when: run_sonarr == "Y" or run_sonarr == "y", tags: [ 'sonarr'] }
+    - { role: hydra, when: run_hydra == "Y" or run_hydra == "y", tags: [ 'hydra' ] }
+    - { role: ombi, when: run_ombi == "Y" or run_ombi == "y", tags: [ 'ombi' ] }
+    - { role: organizr, when: run_organizr == "Y" or run_organizr == "y", tags: [ 'organizr' ] }
+    - { role: mylar, when: run_mylar == "Y" or run_mylar == "y", tags: [ 'mylar' ] }
+    - { role: lazyl, when: run_lazyl == "Y" or run_lazyl == "y", tags: [ 'lazyl' ] }
+    - { role: gazee, when: run_gazee == "Y" or run_gazee == "y", tags: [ 'gazee' ] }

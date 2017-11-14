@@ -8,6 +8,8 @@
       PUID: '{{ user_id }}'
       PGID: '{{ group_id }}'
       TZ: '{{ TZ_TimeZone }}'
+      VIRTUAL_HOST: 'sab.hubcaps.pw'
+      VIRTUAL_PORT: '{{ sab_port }}'
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
       - '{{ sab_directory }}:/config'
