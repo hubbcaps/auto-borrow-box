@@ -1,6 +1,6 @@
 # auto-borrow-box
 
-This is an Ansible Playbook used to deploy [Plex](https://hub.docker.com/r/plexinc/pms-docker/), [Ubooquity](https://hub.docker.com/r/linuxserver/ubooquity/), [SabNZB](https://hub.docker.com/r/linuxserver/sabnzbd/), [Deluge](https://hub.docker.com/r/linuxserver/deluge/), [NZBHydra](https://hub.docker.com/r/linuxserver/hydra/), [Ombi](https://hub.docker.com/r/linuxserver/ombi/), [Mylar](https://hub.docker.com/r/linuxserver/mylar/), [Lazy Librarian](https://hub.docker.com/r/linuxserver/lazylibrarian/), [Radarr](https://hub.docker.com/r/linuxserver/radarr/), and [Sonarr](https://hub.docker.com/r/linuxserver/sonarr/) inside of Docker containers.
+This is an Ansible Playbook used to deploy [Plex](https://hub.docker.com/r/plexinc/pms-docker/), [Gazee](https://github.com/linuxserver/docker-gazee), [SabNZB](https://hub.docker.com/r/linuxserver/sabnzbd/), [NZBHydra](https://hub.docker.com/r/linuxserver/hydra/), [Ombi](https://hub.docker.com/r/linuxserver/ombi/), [Mylar](https://hub.docker.com/r/linuxserver/mylar/), [Lazy Librarian](https://hub.docker.com/r/linuxserver/lazylibrarian/), [Radarr](https://hub.docker.com/r/linuxserver/radarr/), and [Sonarr](https://hub.docker.com/r/linuxserver/sonarr/) inside of Docker containers.
 
 Before deploying this, you should look through each of the above docker READMEs and verify the settings in them and the playbooks here work for your needs and setup.
 

@@ -15,10 +15,7 @@ ombi_port: 3579
 organ_port: 8181
 mylar_port: 8090
 lazyl_port: 5299
-ubooq_user_port: 2202
-ubooq_admin_port: 2203
-deluge_port: 8112
-torrent_port: 42001
+gazee_port: 4242
 
 # Global Downloading Paths
 
@@ -63,15 +60,7 @@ mylar_config: /storage/mylar
 
 lazyl_config: /storage/lazyl
 
-# Ubooquity Vars
+# Gazee Vars
 
-ubooq_config: /storage/ubooq
-max_mem: 8192
-
-# Deluge Vars
-
-deluge_config: /storage/deluge
-
-# Calibre Vars
-
-calibre_config: /storage/calibre
+gazee_config: /storage/gazee
+gazee_comics: /media/comics

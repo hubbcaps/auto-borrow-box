@@ -1,0 +1,16 @@
+- name: setup and start the NZBHydra container
+  docker_container:
+    image: "linuxserver/gazee:latest"
+    name: "gazee"
+    env:
+      PUID: '{{ user_id }}'
+      PGID: '{{ group_id }}'
+    volumes:
+      - '{{ gazee_config }}:/config '
+      - '{{ gazee_comics }}:/comics'
+    ports: "{{ gazee_port }}:{{ gazee_port }}"
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      tag: "gazee"
