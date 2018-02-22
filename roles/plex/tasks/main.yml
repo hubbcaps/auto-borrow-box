@@ -24,6 +24,8 @@
     log_opt:
       tag: "plex"
     env:
+      PLEX_UID: '{{ user_id }}'
+      PLEX_GID: '{{ group_id }}'
       TZ: "{{ TZ_TimeZone }}"
       PLEX_CLAIM: '{{ plex_claim }}'
       ADVERTISE_IP: '{{ advertise_ip }}'
