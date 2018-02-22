@@ -1,8 +1,9 @@
 # Variables for use throughout the templates and taks.
 
+docker_user: docker-runner
 user_id: 1004
 group_id: 1004
-TZ_TimeZone: America/Phoenix
+TZ_TimeZone: <your timezone here in Country/City format>
 
 # Application Ports
 
@@ -19,48 +20,49 @@ gazee_port: 4242
 
 # Global Downloading Paths
 
-host_media: /media
-host_media_downloaded: /media/downloads
-host_media_downloading: /media/incomplete-downloads
+host_media: /nfs
+host_media_downloaded: /nfs/downloads
+host_media_downloading: /nfs/incomplete-downloads
 
 # Plex Docker Creation Variables
-host_plex_config_path: /media/plexdb
-host_media_tv_path: /media/tvshows
-host_media_movies_path: /media/movies
-host_media_anime_path: /media/anime
-plex_transcode_path: /media/plexdb/transcode
-plex_claim: <get yours>
-advertise_ip: http://192.168.0.44:32400
-allowed_networks: 192.168.0.0/24
+host_plex_config_path: /nfs/plexdb
+host_media_tv_path: /nfs/tvshows
+host_media_movies_path: /nfs/movies
+plex_transcode_path: /nfs/plexdb/transcode
+plex_claim: <get yours here: https://www.plex.tv/claim>
+plex_hostname: Moonbase
+advertise_ip: "{{ ansible_default_ipv4.address }}:32400"
+net_mask: "{{ ansible_default_ipv4.network }}/{{ ansible_default_ipv4.netmask }}"
+allowed_networks: "{{ net_mask|ipaddr('net') }}"
 
 # SabNZB Docker Creation Variables
-sab_directory: /storage/sab
+sab_directory: /configs/sab
 
 # Couch Docker Creation Variables
-radarr_directory: /storage/radarr
+radarr_directory: /configs/radarr
 
 # Sonarr Docker Creation Variables
-sonarr_directory: /storage/sonarr
+sonarr_directory: /configs/sonarr
 
 # Hydra Docker Creation Variables
-hydra_directory: /storage/hydra
-hydra_downloads_directory: /storage/hydra/downloads
+hydra_directory: /configs/hydra
+hydra_downloads_directory: /configs/hydra/downloads
 
 # Ombi Docker Creation Variables
-ombi_directory: /storage/ombi
+ombi_directory: /configs/ombi
 
 # Organizr Docker Creation variables
-organ_directory: /storage/organizr
+organ_directory: /configs/organizr
 
 # Mylar Vars
 
-mylar_config: /storage/mylar
+mylar_config: /configs/mylar
 
 # LazyL Vars
 
-lazyl_config: /storage/lazyl
+lazyl_config: /configs/lazyl
 
 # Gazee Vars
 
-gazee_config: /storage/gazee
-gazee_comics: /media/comics
+gazee_config: /configs/gazee
+gazee_comics: /nfs/comics

@@ -9,7 +9,6 @@
     - "{{ host_plex_config_path }}:/config"
     - "{{ host_media_tv_path }}:/data/tvshows"
     - "{{ host_media_movies_path }}:/data/movies"
-    - "{{ host_media_anime_path }}:/data/anime"
     - "{{ plex_transcode_path }}:/transcode"
     ports:
     - '32400:32400'

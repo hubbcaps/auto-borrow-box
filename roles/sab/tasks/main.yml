@@ -15,7 +15,6 @@
       - '{{ host_media_downloading }}:/incomplete-downloads'
     ports:
       - '{{ sab_port }}:{{ sab_port }}'
-      - 9090:9090
     state: 'started'
     restart_policy: 'always'
     log_driver: 'syslog'

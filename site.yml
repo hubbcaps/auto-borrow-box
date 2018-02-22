@@ -1,8 +1,8 @@
 # This playbook will deploy the whole Plex + Usenet Automation Setup inside docker containers. Remove any roles you don't want.
 
 - name: Apply system configuration
-  hosts: dockbox
-  remote_user: hubcaps
+  hosts: "{{ target }}"
+  remote_user: "{{ user }}"
   become: true
   vars_prompt:
     - name: run_common
@@ -11,13 +11,14 @@
       private: no
 
   roles:
-    - { role: common, when: run_common == "Y" or run_common == "y", tags: [ 'common' ] }
+    - { role: centos_setup, when: ansible_distribution == "CentOS" and (run_common == "Y" or run_common == "y"), tags: [ 'common' ] }
+    - { role: ubuntu_setup, when: ansible_distribution == 'Ubuntu' and (run_common == "Y" or run_common == "y"), tags: [ 'common' ] }
 
 - name: Spin up docker containers for each application in the stack
   hosts: dockbox
   remote_user: hubcaps
   become: true
-  become_user: docker-runner
+  become_user: "{{ docker_user }}"
   vars_prompt:
     - name: run_plex
       prompt: "Install Plex(Y/N)?"
