@@ -24,13 +24,16 @@ host_media: /nfs
 host_media_downloaded: /nfs/downloads
 host_media_downloading: /nfs/incomplete-downloads
 
+# Traefik variables
+docker_network_name: borrow_net
+
 # Plex Docker Creation Variables
-host_plex_config_path: /nfs/plexdb
+host_plex_config_path: /configs/plexdb
 host_media_tv_path: /nfs/tvshows
 host_media_movies_path: /nfs/movies
-plex_transcode_path: /nfs/plexdb/transcode
-plex_claim: <get yours here: https://www.plex.tv/claim>
-plex_hostname: Moonbase
+plex_transcode_path: /configs/plexdb/transcode
+plex_claim: <get a plex claim code>
+plex_hostname: <CHOOSE YOURS>
 advertise_ip: "{{ ansible_default_ipv4.address }}:32400"
 net_mask: "{{ ansible_default_ipv4.network }}/{{ ansible_default_ipv4.netmask }}"
 allowed_networks: "{{ net_mask|ipaddr('net') }}"

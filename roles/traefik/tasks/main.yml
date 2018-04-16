@@ -1,0 +1,24 @@
+- name: create traefik network
+  docker_network:
+    name: "{{ docker_network_name }}"
+
+- name: create traefik container 
+  docker_container:
+    name: traefik
+    image: traefik:latest
+    command: --api --docker
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /configs/traefik/traefik.toml:/traefik.toml
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8888:8080"
+    networks: 
+      - name: "{{ docker_network_name }}"
+    labels: 
+      traefik.enable: "true"
+      traefik.frontend.rule: Host:proxy.hubcaps.pw
+      traefik.port: "8080"
+      traefik.backend: traefik
+      traefik.docker.network: "{{ docker_network_name }}"

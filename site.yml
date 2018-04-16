@@ -20,6 +20,10 @@
   become: true
   become_user: "{{ docker_user }}"
   vars_prompt:
+    - name: run_traefik
+      prompt: "Install Traefik(Y/N)?"
+      default: "N"
+      private: no
     - name: run_plex
       prompt: "Install Plex(Y/N)?"
       default: "N"
@@ -62,6 +66,7 @@
       private: no
 
   roles:
+    - { role: traefik, when: run_traefik == "Y" or run_traefik == "y", tags: [ 'traefik' ] }
     - { role: plex, when: run_plex == "Y" or run_plex == "y", tags: [ 'plex' ] }
     - { role: sab, when: run_sab == "Y" or run_sab == "y", tags: [ 'sab' ] }
     - { role: radarr, when: run_radarr == "Y" or run_radarr == "y", tags: [ 'radarr' ] }

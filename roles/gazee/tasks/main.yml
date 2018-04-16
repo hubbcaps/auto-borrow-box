@@ -1,7 +1,15 @@
-- name: setup and start the NZBHydra container
+- name: setup and start the Gazee container
   docker_container:
     image: "linuxserver/gazee:latest"
     name: "gazee"
+    networks:
+      - name: "{{ docker_network_name }}"
+    labels: 
+      traefik.enable: "true"
+      traefik.frontend.rule: Host:gazee.hubcaps.pw
+      traefik.port: "4242"
+      traefik.backend: "gazee"
+      traefik.docker.network: "{{ docker_network_name }}"
     env:
       PUID: '{{ user_id }}'
       PGID: '{{ group_id }}'
