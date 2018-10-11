@@ -1,0 +1,19 @@
+- name: setup and start the ubooquity container
+  docker_container:
+    image: "linuxserver/ubooquity:latest"
+    name: "ubooquity"
+    env:
+      PUID: '{{ user_id }}'
+      PGID: '{{ group_id }}'
+      MAXMEM: '16000'
+    volumes:
+      - '{{ ubooquity_config }}:/config'
+      - '{{ ubooquity_comics }}:/comics'
+    ports: 
+      - "{{ ubooquity_port }}:{{ ubooquity_port }}"
+      - "{{ ubooquity_admin_port }}:{{ ubooquity_admin_port }}"
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      tag: "ubooquity"

@@ -8,7 +8,7 @@
       TZ: '{{ TZ_TimeZone }}'
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
-      - '{{ radarr_directory }}:/config'
+      - '{{ radarr_config }}:/config'
       - '{{ host_media_downloaded }}:/downloads'
       - '{{ host_media_movies_path }}:/movies'
     ports: '{{ radarr_port }}:{{ radarr_port  }}'

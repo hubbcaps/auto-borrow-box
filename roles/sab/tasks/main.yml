@@ -10,7 +10,7 @@
       TZ: '{{ TZ_TimeZone }}'
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
-      - '{{ sab_directory }}:/config'
+      - '{{ sab_config }}:/config'
       - '{{ host_media }}:/downloads'
       - '{{ host_media_downloading }}:/incomplete-downloads'
     ports:

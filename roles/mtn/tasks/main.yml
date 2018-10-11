@@ -1,0 +1,12 @@
+- name: setup and start the mtn container
+  docker_container:
+    image: "chimpchimp/manage-this-node:latest"
+    name: "mtn"
+    volumes:
+      - '{{ mtn_config }}:/config'
+    ports: "{{ mtn_port }}:{{ mtn_port }}"
+    state: 'started'
+    restart_policy: 'always'
+    log_driver: 'syslog'
+    log_opt:
+      tag: "mtn"

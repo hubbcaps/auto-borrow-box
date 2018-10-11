@@ -1,32 +1,21 @@
 # This play book handles the downloading of necessary packages and applies firewall opening on the server.
 
+- name: Verify EPEL is enabled
+  yum: name={{item}} state=installed
+  with_items:
+    - epel-release
+
 - name: Install necessary packages
   yum: name={{item}} state=installed
   with_items:
-    - git
-    - curl
-    - wget
     - yum-utils
     - python-pip
+    - docker-ce
 
-- name: Add Docker Repo
-  yum_repository:
-    name: docker
-    description: Docker Repo
-    baseurl: https://download.docker.com/linux/centos/docker-ce.repo
-
-- name: Install Docker Main
-  yum:
-    name: docker
-    state: latest
-  tags:
-  - skip_ansible_lint
-
-- name: Install docker-py
+- name: Install docker python module
   pip: name={{item}}
   with_items:
     - docker
-    - docker-py
 
 - name: Start and Enable the docker service
   service:
@@ -53,14 +42,13 @@
     - { portname: "{{ sonarr_port }}", porttype: 'udp'}
     - { portname: "{{ hydra_port }}", porttype: 'tcp'}
     - { portname: "{{ hydra_port }}", porttype: 'udp'}
-    - { portname: "{{ ombi_port }}", porttype: 'tcp'}
-    - { portname: "{{ ombi_port }}", porttype: 'udp'}
-    - { portname: "{{ organ_port }}", porttype: 'tcp'}
-    - { portname: "{{ organ_port }}", porttype: 'udp'}
     - { portname: "{{ mylar_port }}", porttype: 'tcp'}
     - { portname: "{{ mylar_port }}", porttype: 'udp'}
     - { portname: "{{ lazyl_port }}", porttype: 'tcp'}
     - { portname: "{{ lazyl_port }}", porttype: 'udp'}
-    - { portname: "{{ gazee_port }}", porttype: 'tcp'}
-    - { portname: "{{ gazee_port }}", porttype: 'udp'}
-
+    - { portname: "{{ ubooquity_port }}", porttype: 'tcp'}
+    - { portname: "{{ ubooquity_port }}", porttype: 'udp'}
+    - { portname: "{{ ubooquity_admin_port }}", porttype: 'tcp'}
+    - { portname: "{{ ubooquity_admin_port }}", porttype: 'udp'}
+    - { portname: "{{ mtn_port }}", porttype: 'tcp'}
+    - { portname: "{{ mtn_port }}", porttype: 'udp'}

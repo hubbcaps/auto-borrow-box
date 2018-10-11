@@ -7,7 +7,7 @@
       PGID: '{{ group_id }}'
     volumes:
       - '/dev/rtc:/dev/rtc:ro'
-      - '{{ sonarr_directory }}:/config '
+      - '{{ sonarr_config }}:/config '
       - '{{ host_media_tv_path }}:/tv'
       - '{{ host_media_downloaded }}:/downloads'
     ports: '{{ sonarr_port }}:{{ sonarr_port }}'

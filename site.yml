@@ -20,8 +20,8 @@
   become: true
   become_user: "{{ docker_user }}"
   vars_prompt:
-    - name: run_traefik
-      prompt: "Install Traefik(Y/N)?"
+    - name: run_mtn
+      prompt: "Install MTN(Y/N)?"
       default: "N"
       private: no
     - name: run_plex
@@ -44,14 +44,6 @@
       prompt: "Install Hydra(Y/N)?"
       default: "N"
       private: no
-    - name: run_ombi
-      prompt: "Install Ombi(Y/N)?"
-      default: "N"
-      private: no
-    - name: run_organizr
-      prompt: "Install Organizr(Y/N)?"
-      default: "N"
-      private: no
     - name: run_mylar
       prompt: "Install Mylar(Y/N)?"
       default: "N"
@@ -60,20 +52,18 @@
       prompt: "Install Lazy Librarian(Y/N)?"
       default: "N"
       private: no
-    - name: run_gazee
-      prompt: "Install Gazee(Y/N)?"
+    - name: run_ubooquity
+      prompt: "Install Ubooquity(Y/N)?"
       default: "N"
       private: no
 
   roles:
-    - { role: traefik, when: run_traefik == "Y" or run_traefik == "y", tags: [ 'traefik' ] }
+    - { role: mtn, when: run_mtn == "Y" or run_mtn == "y", tags: [ 'mtn' ] }
     - { role: plex, when: run_plex == "Y" or run_plex == "y", tags: [ 'plex' ] }
     - { role: sab, when: run_sab == "Y" or run_sab == "y", tags: [ 'sab' ] }
     - { role: radarr, when: run_radarr == "Y" or run_radarr == "y", tags: [ 'radarr' ] }
     - { role: sonarr, when: run_sonarr == "Y" or run_sonarr == "y", tags: [ 'sonarr'] }
     - { role: hydra, when: run_hydra == "Y" or run_hydra == "y", tags: [ 'hydra' ] }
-    - { role: ombi, when: run_ombi == "Y" or run_ombi == "y", tags: [ 'ombi' ] }
-    - { role: organizr, when: run_organizr == "Y" or run_organizr == "y", tags: [ 'organizr' ] }
     - { role: mylar, when: run_mylar == "Y" or run_mylar == "y", tags: [ 'mylar' ] }
     - { role: lazyl, when: run_lazyl == "Y" or run_lazyl == "y", tags: [ 'lazyl' ] }
-    - { role: gazee, when: run_gazee == "Y" or run_gazee == "y", tags: [ 'gazee' ] }
+    - { role: ubooquity, when: run_ubooquity == "Y" or run_ubooquity == "y", tags: [ 'ubooquity' ] }

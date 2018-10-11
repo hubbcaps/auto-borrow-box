@@ -12,11 +12,11 @@ sab_port: 8080
 radarr_port: 7878
 sonarr_port: 8989
 hydra_port: 5075
-ombi_port: 3579
-organ_port: 8181
 mylar_port: 8090
 lazyl_port: 5299
-gazee_port: 4242
+ubooquity_port: 2202
+ubooquity_admin_port: 2203
+mtn_port: 3000
 
 # Global Downloading Paths
 
@@ -32,30 +32,27 @@ host_plex_config_path: /configs/plexdb
 host_media_tv_path: /nfs/tvshows
 host_media_movies_path: /nfs/movies
 plex_transcode_path: /configs/plexdb/transcode
-plex_claim: <get a plex claim code>
-plex_hostname: <CHOOSE YOURS>
+plex_claim: <your plex claim code here>
+plex_hostname: <your plex name>
 advertise_ip: "{{ ansible_default_ipv4.address }}:32400"
 net_mask: "{{ ansible_default_ipv4.network }}/{{ ansible_default_ipv4.netmask }}"
 allowed_networks: "{{ net_mask|ipaddr('net') }}"
 
 # SabNZB Docker Creation Variables
-sab_directory: /configs/sab
+sab_config: /configs/sab
 
 # Couch Docker Creation Variables
-radarr_directory: /configs/radarr
+radarr_config: /configs/radarr
 
 # Sonarr Docker Creation Variables
-sonarr_directory: /configs/sonarr
+sonarr_config: /configs/sonarr
 
 # Hydra Docker Creation Variables
-hydra_directory: /configs/hydra
+hydra_config: /configs/hydra
 hydra_downloads_directory: /configs/hydra/downloads
 
 # Ombi Docker Creation Variables
-ombi_directory: /configs/ombi
-
-# Organizr Docker Creation variables
-organ_directory: /configs/organizr
+mtn_config: /configs/mtn/
 
 # Mylar Vars
 
@@ -65,7 +62,7 @@ mylar_config: /configs/mylar
 
 lazyl_config: /configs/lazyl
 
-# Gazee Vars
+# ubooquity Vars
 
-gazee_config: /configs/gazee
-gazee_comics: /nfs/comics
+ubooquity_config: /configs/ubooquity
+ubooquity_comics: /nfs/comics

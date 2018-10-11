@@ -7,8 +7,8 @@
     restart_policy: "always"
     volumes:
     - "{{ lazyl_config }}:/config"
-    - "{{host_media_downloaded}}/books:/downloads"
-    - "{{host_media}}/books:/books"
+    - "{{ host_media_downloaded }}/books:/downloads"
+    - "{{ host_media }}/books:/books"
     ports:
       - "{{ lazyl_port }}:{{ lazyl_port }}"
     env:

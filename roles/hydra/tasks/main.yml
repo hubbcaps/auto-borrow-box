@@ -7,7 +7,7 @@
       PGID: '{{ group_id }}'
       TZ: '{{ TZ_TimeZone  }}'
     volumes:
-      - '{{ hydra_directory }}:/config '
+      - '{{ hydra_config }}:/config '
       - '{{ hydra_downloads_directory }}:/downloads'
     ports: "{{ hydra_port }}:{{ hydra_port }}"
     state: 'started'

@@ -1,6 +1,6 @@
 # auto-borrow-box
 
-This is an Ansible Playbook used to install Docker and needed packages, and then deploy [Plex](https://hub.docker.com/r/plexinc/pms-docker/), [Gazee](https://github.com/linuxserver/docker-gazee), [SabNZB](https://hub.docker.com/r/linuxserver/sabnzbd/), [NZBHydra](https://hub.docker.com/r/linuxserver/hydra/), [Ombi](https://hub.docker.com/r/linuxserver/ombi/), [Mylar](https://hub.docker.com/r/linuxserver/mylar/), [Lazy Librarian](https://hub.docker.com/r/linuxserver/lazylibrarian/), [Radarr](https://hub.docker.com/r/linuxserver/radarr/), and [Sonarr](https://hub.docker.com/r/linuxserver/sonarr/) inside of Docker containers.
+This is an Ansible Playbook used to install Docker and needed packages, and then deploy [Plex](https://hub.docker.com/r/plexinc/pms-docker/), [Ubooquity](https://github.com/linuxserver/ubooquity), [SabNZB](https://hub.docker.com/r/linuxserver/sabnzbd/), [NZBHydra](https://hub.docker.com/r/linuxserver/hydra/), [Mylar](https://hub.docker.com/r/linuxserver/mylar/), [Lazy Librarian](https://hub.docker.com/r/linuxserver/lazylibrarian/), [Radarr](https://hub.docker.com/r/linuxserver/radarr/), and [Sonarr](https://hub.docker.com/r/linuxserver/sonarr/) and [Manage this node](https://github.com/onedr0p/manage-this-node) inside of Docker containers.
 
 
 ## Features
@@ -47,6 +47,8 @@ Once the base container configuration is completed, I highly recommend following
 Troubleshooting tips:
 
 With the configuration of each container, it's pushing all of it's logs into the hosts /var/log/messages so that should be the first place to check when something appears to not be working correctly.
+
+This can be modified to taste to point at almost any logging mechanism you can desire. Docker is pretty flexible with this.
 
 On CentOS, you may need to tweak SELinux, otherwise you may have issues with how some of the containers operate.
 

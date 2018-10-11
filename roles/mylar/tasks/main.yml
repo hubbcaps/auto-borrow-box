@@ -7,8 +7,8 @@
     restart_policy: "always"
     volumes:
     - "{{ mylar_config }}:/config"
-    - "{{host_media_downloaded}}/comics:/downloads"
-    - "{{host_media}}/comics:/comics"
+    - "{{ host_media_downloaded }}/comics:/downloads"
+    - "{{ host_media }}/comics:/comics"
     ports:
       - "{{ mylar_port }}:{{ mylar_port }}"
     env:

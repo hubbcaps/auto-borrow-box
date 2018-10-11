@@ -3,9 +3,6 @@
 - name: Install necessary packages
   package: name={{item}} state=installed
   with_items:
-    - git
-    - curl
-    - wget
     - apt-transport-https
     - ca-certificates
     - software-properties-common
@@ -40,12 +37,6 @@
     state: started
     enabled: yes
 
-- name: add your docker user to the docker group so it can contact the API
-  user:
-    name: "{{ docker_user }}"
-    append: yes
-    groups: docker
-
 # Open up ports for all those dope applications.
 
 - name: Open up the ports
@@ -54,14 +45,14 @@
     policy: allow
     port: "{{ item.portname }}"
   with_items:
+    - { portname: "{{ mtn_port }}"}
     - { portname: "{{ plex_port }}"}
     - { portname: "{{ sab_port }}"}
     - { portname: "{{ radarr_port }}"}
     - { portname: "{{ sonarr_port }}"}
     - { portname: "{{ hydra_port }}"}
-    - { portname: "{{ ombi_port }}"}
-    - { portname: "{{ organ_port }}"}
     - { portname: "{{ mylar_port }}"}
     - { portname: "{{ lazyl_port }}"}
     - { portname: "{{ gazee_port }}"}
+    - { portname: "{{ gazee_admin_port }}"}
 
